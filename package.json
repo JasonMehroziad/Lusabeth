@@ -1,0 +1,16 @@
+{
+  "name": "lusabot",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "Lusabot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "ollama": "^0.5.15"
+  }
+}
