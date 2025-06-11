@@ -1,15 +1,15 @@
 const { Events } = require('discord.js');
 const { default: ollama } = require('ollama');
-const { channelId, modelName } = require('../config.json');
+const { textChannelId, modelName } = require('../config.json');
 const chatHistory = require('../index.js')
 
 module.exports = {
     name: Events.MessageCreate,
     async execute(message) {
-        // Only reply to direct mentions excluding itself
-        if (message.channelId !== channelId || message.author.bot) return;
+        // Only reply human messages in a config specified channel
+        if (message.channelId !== textChannelId || message.author.bot) return;
 
-        // process input
+        // preprocess input
         const content = message.member.displayName +  ": \"" + message.content + "\"";
         try {
             // Add message to chat history
