@@ -10,14 +10,13 @@ const loadModel = require('./helpers/loadModel');
  * Bot main. Init commands and event listeners.
  */
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates] });
 const chatHistory = [];
 module.exports = chatHistory;
 
 // Load defined commands
 client.commands = new Collection();
 loadCommands(client.commands);
-
 // Load defined event listeners
 loadEvents(client);
 // Load the local language model
