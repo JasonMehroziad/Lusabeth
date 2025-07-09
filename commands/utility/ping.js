@@ -9,7 +9,7 @@ module.exports = {
 		if (latency > 100) {
 			await interaction.reply("Ping is " + latency + "ms?? Can I have your potato when you replace it?")
 		} else {
-			await interaction.reply("Ping is " + latency + "ms! Almost as fast as me")
+			await interaction.reply("Ping is " + latency + "ms! Almost as fast as me~")
 		}
 	},
 };

@@ -1,5 +1,5 @@
 const { REST, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
+const { clientId, token } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -31,17 +31,16 @@ const rest = new REST().setToken(token);
 (async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
-		rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: [] })
+		rest.put(Routes.applicationCommands(clientId), { body: [] })
 			.then(() => console.log('Successfully deleted all application commands.'))
-			.catch(console.error);
+			.catch(console.error); 
 
 		const data = await rest.put(
-			Routes.applicationGuildCommands(clientId, guildId),
+			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
-
 		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
 	} catch (error) {
 		console.error(error);
 	}
-})();
+});
