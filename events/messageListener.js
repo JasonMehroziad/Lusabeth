@@ -3,6 +3,10 @@ const { default: ollama } = require('ollama');
 const { textChannelId, modelName } = require('../config.json');
 const chatHistory = require('../index.js')
 
+/**
+ * Listener for messages. Used for text interactions and limited to a specific channel.
+ */
+
 module.exports = {
     name: Events.MessageCreate,
     async execute(message) {
@@ -21,7 +25,7 @@ module.exports = {
             });
             // Add response to chat history then reply
             chatHistory.push({ role: 'assistant', content: response.message.content});
-            await message.reply(response.message.content)
+            await message.reply({content: response.message.content, tts: true})
                          .then(() => console.log(chatHistory));
         } catch (error) {
             console.error(error);

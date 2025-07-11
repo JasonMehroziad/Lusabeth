@@ -1,5 +1,9 @@
 const { SlashCommandBuilder } = require('discord.js');
 
+/**
+ * Get the latency for this app.
+ */
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')

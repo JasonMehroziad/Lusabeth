@@ -26,13 +26,11 @@ Additionally, define a config.json with the following fields for your server:
 {
     "token": "", 
     "clientId": "", 
-    "guildId": "", 
     "textChannelId": "", 
-    "voiceChannelId": "", 
     "modelName": "lusabeth"
 }
 ```
-Token and client ID can be pulled from the [Discord developer portal](https://discord.com/developers). The other IDs can be found by enabling developer mode on Discord.
+Token and client ID can be pulled from the [Discord developer portal](https://discord.com/developers). Text channel ID can be found by enabling developer mode on Discord.
 
 ### NodeJS 
 

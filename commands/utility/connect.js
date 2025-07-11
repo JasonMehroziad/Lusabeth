@@ -1,6 +1,12 @@
 const { SlashCommandBuilder, MessageFlags } = require('discord.js');
 const { joinVoiceChannel } = require('@discordjs/voice');
 
+/**
+ * Connect to the provided voice channel. If none are provided, 
+ * join the channel the user is in, if any.
+ * @param channel (optional) voice channel to connect to.
+ */
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('connect')

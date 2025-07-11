@@ -1,6 +1,10 @@
 const { getVoiceConnection } = require('@discordjs/voice');
 const { SlashCommandBuilder } = require('discord.js');
 
+/**
+ * Shut down the bot, disconnecting voice if needed.
+ */
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('quit')
