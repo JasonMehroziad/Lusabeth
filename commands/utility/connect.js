@@ -26,6 +26,7 @@ module.exports = {
 				adapterCreator: interaction.guild.voiceAdapterCreator,
 				selfDeaf: false,
 			});
+			connection.subscribe(createAudioPlayer());
 			await interaction.reply({content: 'Joined voice channel!', flags: MessageFlags.Ephemeral});
 		}
 	},

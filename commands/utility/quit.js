@@ -13,6 +13,7 @@ module.exports = {
         await interaction.reply("Nap time!");
         const connection = getVoiceConnection(interaction.guildId);
         if (connection) {
+			connection.state.subscription.player.stop();
             await connection.destroy();
         }
 		interaction.client.destroy();

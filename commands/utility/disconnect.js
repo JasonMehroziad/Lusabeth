@@ -12,6 +12,7 @@ module.exports = {
 	async execute(interaction) {
         const connection = getVoiceConnection(interaction.guildId);
         if (connection) {
+            connection.state.subscription.player.stop();
             await connection.destroy();
             await interaction.reply({content: 'Left voice channel!', flags: MessageFlags.Ephemeral});
         }
